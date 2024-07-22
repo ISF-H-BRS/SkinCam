@@ -1,0 +1,5 @@
+# Allow normal users to use the controller device
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="5750", GROUP="users", MODE="0664"
+
+# Minimize serial-port latency for legacy device
+KERNELS=="ttyUSB[0-9]*", SUBSYSTEMS=="usb-serial", ATTR{latency_timer}="1"

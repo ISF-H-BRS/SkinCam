@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/camera.svg</file>
+        <file>res/configure.svg</file>
+        <file>res/disconnect.svg</file>
+        <file>res/image.svg</file>
+        <file>res/pause.svg</file>
+        <file>res/load.svg</file>
+        <file>res/save.svg</file>
+        <file>res/refresh.svg</file>
+        <file>res/about.svg</file>
+        <file>res/logo-isf.png</file>
+        <file>res/logo-hbrs.png</file>
+        <file>res/lock.svg</file>
+        <file>res/unlock.svg</file>
+        <file>res/log.svg</file>
+        <file>res/image-save.svg</file>
+        <file>res/export.svg</file>
+    </qresource>
+</RCC>

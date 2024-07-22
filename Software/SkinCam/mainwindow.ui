@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>784</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SkinCam Viewer</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_36">
+    <item>
+     <widget class="QSplitter" name="splitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
+      <widget class="QTabWidget" name="imageTabWidget">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>1</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="overviewTab">
+        <attribute name="title">
+         <string>Overview</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="1">
+          <widget class="QWidget" name="overviewImage1" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_26">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QWidget" name="overviewImage0" native="true">
+           <property name="baseSize">
+            <size>
+             <width>640</width>
+             <height>512</height>
+            </size>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_25">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QWidget" name="overviewImage2" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_27">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QWidget" name="overviewComposite" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_28">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="rawTab">
+        <attribute name="title">
+         <string>Raw</string>
+        </attribute>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="3" column="1">
+          <widget class="QWidget" name="rawDark" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_16">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QWidget" name="rawImage0" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_18">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QWidget" name="rawImage2" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_31">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QWidget" name="rawImage1" native="true">
+           <layout class="QVBoxLayout" name="verticalLayout_29">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="imageTab0">
+        <attribute name="title">
+         <string>1050 nm</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_2"/>
+       </widget>
+       <widget class="QWidget" name="imageTab1">
+        <attribute name="title">
+         <string>1300 nm</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout"/>
+       </widget>
+       <widget class="QWidget" name="imageTab2">
+        <attribute name="title">
+         <string>1550 nm</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_3"/>
+       </widget>
+       <widget class="QWidget" name="compositeTab">
+        <attribute name="title">
+         <string>Composite</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_4"/>
+       </widget>
+       <widget class="QWidget" name="skinMaskTab">
+        <attribute name="title">
+         <string>Skin Mask</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_5"/>
+       </widget>
+       <widget class="QWidget" name="faceDetectionTab">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <attribute name="title">
+         <string>Face Detection</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_19"/>
+       </widget>
+      </widget>
+      <widget class="QTabWidget" name="controlTabWidget">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="tabPosition">
+        <enum>QTabWidget::East</enum>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <property name="usesScrollButtons">
+        <bool>false</bool>
+       </property>
+       <widget class="QWidget" name="processingTab">
+        <attribute name="title">
+         <string>Image Processing</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_21">
+         <item>
+          <widget class="QFrame" name="frame_2">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_15">
+            <item>
+             <widget class="SkinCam::ColorAdjustmentWidget" name="colorAdjustmentWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_5">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_13">
+            <item>
+             <widget class="SkinCam::SmoothingWidget" name="smoothingWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_11">
+            <item>
+             <widget class="SkinCam::SharpeningWidget" name="sharpeningWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_4">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_8">
+            <item>
+             <widget class="SkinCam::AverageWidget" name="averageWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="Line" name="line">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="enableMirroring">
+           <property name="text">
+            <string>Mirror images</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="transformationTab">
+        <attribute name="title">
+         <string>Image Transformation</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_24">
+         <item>
+          <widget class="QFrame" name="barrelFrame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_22">
+            <item>
+             <widget class="SkinCam::BarrelWidget" name="barrelWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="transformationFrame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_23">
+            <item>
+             <widget class="SkinCam::TransformationWidget" name="transformationWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="cropFrame">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_14">
+            <item>
+             <widget class="SkinCam::CropWidget" name="cropWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="calibrationTab">
+        <attribute name="title">
+         <string>Image Calibration</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <item>
+          <widget class="QFrame" name="frame_6">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_32">
+            <item>
+             <widget class="SkinCam::WhiteCalibrationWidget" name="whiteCalibrationWidget" native="true"/>
+            </item>
+            <item>
+             <widget class="QPushButton" name="selectWhiteButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string>Select White Pixels</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>488</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="classificationTab">
+        <attribute name="title">
+         <string>Skin Classification</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_30">
+         <item>
+          <widget class="QGroupBox" name="groupBox">
+           <property name="title">
+            <string>Classifier</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_12">
+            <item>
+             <widget class="SkinCam::ClassifierWidget" name="classifierWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="detectionThresholdsGroup">
+           <property name="title">
+            <string>Detection Thresholds</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <widget class="SkinCam::DetectionThresholdsWidget" name="detectionThresholdsWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_3">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <widget class="SkinCam::RegionOfInterestWidget" name="regionOfInterestWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frame_7">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_17">
+            <item>
+             <widget class="SkinCam::FaceDetectionWidget" name="faceDetectionWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="selectSkinButton">
+           <property name="text">
+            <string>Select Skin Pixels</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>402</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="cameraTab">
+        <attribute name="title">
+         <string>Camera Control</string>
+        </attribute>
+        <layout class="QVBoxLayout" name="verticalLayout_33">
+         <item>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string>Acquisition Control</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_35">
+            <item>
+             <widget class="SkinCam::AcquisitionWidget" name="acquisitionWidget" native="true">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="advancedGroup">
+           <property name="title">
+            <string>Advanced</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_9">
+            <item>
+             <widget class="SkinCam::AdvancedWidget" name="advancedWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="ledPowerGroup">
+           <property name="title">
+            <string>LED Power</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_34">
+            <item>
+             <widget class="SkinCam::LedPowerWidget" name="ledPowerWidget" native="true">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="cameraInfoLabel">
+           <property name="palette">
+            <palette>
+             <active>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>72</red>
+                 <green>78</green>
+                 <blue>80</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </active>
+             <inactive>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>35</red>
+                 <green>38</green>
+                 <blue>39</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </inactive>
+             <disabled>
+              <colorrole role="WindowText">
+               <brush brushstyle="SolidPattern">
+                <color alpha="255">
+                 <red>119</red>
+                 <green>120</green>
+                 <blue>120</blue>
+                </color>
+               </brush>
+              </colorrole>
+             </disabled>
+            </palette>
+           </property>
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="text">
+            <string>Pause acquisition to modify settings.</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>322</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="statusGroup">
+           <property name="title">
+            <string>Status</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_20">
+            <item>
+             <widget class="SkinCam::StatusWidget" name="statusWidget" native="true"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="contextMenuPolicy">
+    <enum>Qt::PreventContextMenu</enum>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::TopToolBarArea</set>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>22</width>
+     <height>22</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <property name="floatable">
+    <bool>false</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpenCamera"/>
+   <addaction name="actionOpenImage"/>
+   <addaction name="actionSaveImage"/>
+   <addaction name="actionPause"/>
+   <addaction name="actionCloseImage"/>
+   <addaction name="separator"/>
+   <addaction name="actionSetup"/>
+   <addaction name="actionSaveSettings"/>
+   <addaction name="actionLoadSettings"/>
+   <addaction name="separator"/>
+   <addaction name="actionExportPixels"/>
+   <addaction name="actionShowLog"/>
+   <addaction name="separator"/>
+   <addaction name="actionAbout"/>
+  </widget>
+  <action name="actionOpenImage">
+   <property name="icon">
+    <iconset resource="SkinCam.qrc">
+     <normaloff>:/res/image.svg</normaloff>:/res/image.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Open Image</string>
+   </property>
+  </action>
+  <action name="actionCloseImage">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="SkinCam.qrc">
+     <normaloff>:/res/disconnect.svg</normaloff>:/res/disconnect.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionPause">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="SkinCam.qrc">
+     <normaloff>:/res/pause.svg</normaloff>:/res/pause.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Pause</string>
+   </property>
+   <property name="toolTip">
+    <string>Pause</string>
+   </property>
+  </action>
+  <action name="actionOpenCamera">
+   <property name="icon">
+    <iconset resource="SkinCam.qrc">
+     <normaloff>:/res/camera.svg</normaloff>:/res/camera.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Open Camera</string>
+   </property>
+  </action>
+  <action name="actionSaveSettings">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="SkinCam.qrc">
+     <normaloff>:/res/save.svg</normaloff>:/res/save.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Save Settings</string>
+   </property>
+  </action>
+  <action name="actionLoadSettings">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="SkinCam.qrc">
+     <normaloff>:/res/load.svg</normaloff>:/res/load.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Load Settings</string>
+   </property>
+  </action>
+  <action name="actionSetup">
+   <property name="icon">
+    <iconset resource="SkinCam.qrc">
+     <normaloff>:/res/configure.svg</normaloff>:/res/configure.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Setup</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="SkinCam.qrc">
+     <normaloff>:/res/about.svg</normaloff>:/res/about.svg</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionSaveImage">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="SkinCam.qrc">
+     <normaloff>:/res/image-save.svg</normaloff>:/res/image-save.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Save Image</string>
+   </property>
+   <property name="toolTip">
+    <string>Save Image</string>
+   </property>
+  </action>
+  <action name="actionShowLog">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="SkinCam.qrc">
+     <normaloff>:/res/log.svg</normaloff>:/res/log.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Show Log</string>
+   </property>
+  </action>
+  <action name="actionExportPixels">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="SkinCam.qrc">
+     <normaloff>:/res/export.svg</normaloff>:/res/export.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Export Pixels</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>SkinCam::TransformationWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/transformationwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::BarrelWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/barrelwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::CropWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/cropwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::ColorAdjustmentWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/coloradjustmentwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::SharpeningWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/sharpeningwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::ClassifierWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/classifierwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::DetectionThresholdsWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/detectionthresholdswidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::RegionOfInterestWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/regionofinterestwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::AverageWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/averagewidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::AdvancedWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/advancedwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::SmoothingWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/smoothingwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::WhiteCalibrationWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/whitecalibrationwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::StatusWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/statuswidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::LedPowerWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/ledpowerwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::AcquisitionWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/acquisitionwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SkinCam::FaceDetectionWidget</class>
+   <extends>QWidget</extends>
+   <header>mainwindow/facedetectionwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="SkinCam.qrc"/>
+  <include location="SkinCam.qrc"/>
+ </resources>
+ <connections/>
+</ui>

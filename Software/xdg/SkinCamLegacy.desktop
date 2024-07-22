@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=SkinCam (legacy)
+Path=<APPDIR>/SkinCam/
+Exec=<APPDIR>/SkinCam/SkinCamLegacy
+Icon=<APPDIR>/SkinCam/SkinCam.svg
+Categories=AudioVideo;Video;

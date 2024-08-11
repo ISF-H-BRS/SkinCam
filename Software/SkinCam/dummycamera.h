@@ -24,6 +24,7 @@
 #pragma once
 
 #include "camera.h"
+#include "memorybuffer.h"
 
 SKINCAM_BEGIN_NAMESPACE();
 

@@ -24,8 +24,6 @@
 #include "camera.h"
 #include "logger.h"
 
-#include <span>
-
 #ifdef __linux__
 #include <sys/socket.h>
 #elif defined(_WIN32)

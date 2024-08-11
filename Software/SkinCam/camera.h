@@ -23,14 +23,20 @@
 
 #pragma once
 
-#include "cameraexception.h"
 #include "global.h"
+
+#ifdef SKINCAM_ENABLE_VIMBA
+#include "cameraexception.h"
 #include "memorybuffer.h"
 
 #include <VimbaCPP/Include/VimbaCPP.h>
 
 #include <condition_variable>
 #include <thread>
+#endif
+
+#include <chrono>
+#include <memory>
 
 using namespace std::chrono_literals;
 
@@ -118,6 +124,7 @@ public:
 
     static constexpr size_t ImagesPerFrame = ChannelCount + 1; // plus dark image
 
+#ifdef SKINCAM_ENABLE_VIMBA
 public:
     Camera(const Setup& setup, AVT::VmbAPI::VimbaSystem* system);
     ~Camera();
@@ -186,6 +193,7 @@ private:
     int m_incompleteFrameScore = 0;
 
     bool m_running = false;
+#endif // SKINCAM_ENABLE_VIMBA
 };
 
 SKINCAM_END_NAMESPACE();

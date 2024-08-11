@@ -24,10 +24,8 @@
 #pragma once
 
 #include "camera.h"
-#include "cameraexception.h"
 #include "controller.h"
 #include "dummycamera.h"
-#include "global.h"
 #include "imageprovider.h"
 
 SKINCAM_BEGIN_NAMESPACE();
@@ -106,9 +104,11 @@ private:
     void setSequenceConfiguration(int refreshRate, std::chrono::microseconds illuminationTime);
 
 private:
+#ifdef SKINCAM_ENABLE_VIMBA
     AVT::VmbAPI::VimbaSystem* m_system;
+#endif
 
-#ifdef SKINCAM_USE_DUMMY_CAMERA
+#if !defined(SKINCAM_ENABLE_VIMBA) || defined(SKINCAM_USE_DUMMY_CAMERA)
     DummyCameraPtr m_camera;
 #else
     CameraPtr m_camera;

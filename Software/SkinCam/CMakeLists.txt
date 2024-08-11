@@ -25,13 +25,14 @@ cmake_minimum_required(VERSION 3.15)
 project(SkinCam)
 
 set(SKINCAM_VERSION_MAJOR 5)
-set(SKINCAM_VERSION_MINOR 0)
+set(SKINCAM_VERSION_MINOR 1)
 set(SKINCAM_VERSION_PATCH 0)
 
 set(SKINCAM_VERSION ${SKINCAM_VERSION_MAJOR}.${SKINCAM_VERSION_MINOR}.${SKINCAM_VERSION_PATCH} )
 
 set(SKINCAM_BUILD_LEGACY OFF CACHE BOOL "Build additional target for legacy hardware")
 set(SKINCAM_USE_DUMMY_CAMERA OFF CACHE BOOL "Use dummy camera backend for testing purposes")
+set(SKINCAM_ENABLE_VIMBA OFF CACHE BOOL "Build using the Vimba SDK for camera access")
 
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD 20)
@@ -55,13 +56,19 @@ find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(libusb REQUIRED libusb-1.0)
 
-if (NOT DEFINED ENV{VIMBA_HOME})
-    message(FATAL_ERROR "Environment variable VIMBA_HOME is not defined. "
-                        "Please make sure it points to latest available version.")
-endif()
+if (SKINCAM_ENABLE_VIMBA)
+    if (NOT DEFINED ENV{VIMBA_HOME})
+        message(FATAL_ERROR "Environment variable VIMBA_HOME is not defined. "
+                            "Please make sure it points to latest available version.")
+    endif()
 
-set(VIMBA_HOME $ENV{VIMBA_HOME})
-set(VIMBA_LIBRARY VimbaCPP)
+    set(VIMBA_HOME $ENV{VIMBA_HOME})
+    set(VIMBA_LIBRARY VimbaCPP)
+
+    add_compile_definitions(SKINCAM_ENABLE_VIMBA)
+else()
+    message("Building without Vimba SDK support.")
+endif()
 
 if (NOT DEFINED ENV{LIBIFD_HOME})
     message(FATAL_ERROR "Environment variable LIBIFD_HOME is not defined. "
@@ -83,10 +90,12 @@ if (WIN32)
     set(EXTRA_LIBRARIES ${EXTRA_LIBRARIES} ws2_32)
 endif()
 
-if (UNIX)
-    link_directories(${VIMBA_HOME}/VimbaCPP/DynamicLib/x86_64bit)
-elseif(WIN32)
-    link_directories(${VIMBA_HOME}/mingw)
+if (SKINCAM_ENABLE_VIMBA)
+    if (UNIX)
+        link_directories(${VIMBA_HOME}/VimbaCPP/DynamicLib/x86_64bit)
+    elseif(WIN32)
+        link_directories(${VIMBA_HOME}/mingw)
+    endif()
 endif()
 
 add_compile_definitions(SKINCAM_VERSION="${SKINCAM_VERSION}")
@@ -114,7 +123,6 @@ set(SKINCAM_SOURCES
     CoSeSt2/CoSeSt2.cpp
     aboutdialog.cpp
     assertions.cpp
-    camera.cpp
     cameraexception.cpp
     cameraselectdialog.cpp
     camerasystem.cpp
@@ -196,8 +204,11 @@ set(SKINCAM_SOURCES
     skinclassifier/skinclassifierworker.cpp
     skinclassifier/summatepixels.cpp
     tcpserver.cpp
-    vimbaloader.cpp
 )
+
+if (SKINCAM_ENABLE_VIMBA)
+    set(SKINCAM_SOURCES ${SKINCAM_SOURCES} camera.cpp vimbaloader.cpp)
+endif()
 
 set(SKINCAM_HEADERS
     CoSeSt2/CoSeSt2.h

@@ -24,7 +24,10 @@
 #include "mainwindow.h"
 #include "openclwrapper.h"
 #include "skincamsystem.h"
+
+#ifdef SKINCAM_ENABLE_VIMBA
 #include "vimbaloader.h"
+#endif
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -78,7 +81,9 @@ auto main(int argc, char* argv[]) -> int
 
         OpenCLWrapper opencl(platformFilter, deviceFilter);
 
+#ifdef SKINCAM_ENABLE_VIMBA
         VimbaLoader vimba;
+#endif
 
         SkinCamSystem skinCam;
 

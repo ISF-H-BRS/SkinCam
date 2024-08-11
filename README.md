@@ -31,7 +31,7 @@ A number of image processing filters were implemented to compensate for imperfec
 
 The implementation uses OpenCL for real-time image processing and skin classification and employs a number of other optimizations in order to achieve a stable frame rate of 40 Hz even on mid- to low-end systems.
 
-In addition to the OpenCL [development headers](https://github.com/KhronosGroup/OpenCL-CLHPP), [Qt6](https://www.qt.io/product/qt6), [FreeImage](https://freeimage.sourceforge.io/), [libIFD](https://github.com/ISF-H-BRS/FaceDetector), [libusb](https://libusb.info/), [libzip](https://libzip.org/) and the [Vimba SDK](https://www.alliedvision.com/en/products/vimba-sdk/) are required to build and run the software.
+In addition to the OpenCL [development headers](https://github.com/KhronosGroup/OpenCL-CLHPP), [Qt6](https://www.qt.io/product/qt6), [FreeImage](https://freeimage.sourceforge.io/), [libIFD](https://github.com/ISF-H-BRS/FaceDetector), [libusb](https://libusb.info/), [libzip](https://libzip.org/) and the [Vimba SDK](https://www.alliedvision.com/en/products/vimba-sdk/) are required to build and run the software. Since the Vimba terms and conditions do not permit end-users to download or use the software, the SkinCam software is by default compiled without support for the Vimba SDK.
 
 The firmware directory contains project files for both the newly developed system, which is based on a STM32 microcontroller, as well as for the original FeGeb system, which was based on an 8-bit AVR microcontroller.
 

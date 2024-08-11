@@ -22,13 +22,16 @@
 // ============================================================================================== //
 
 #include "aboutdialog.h"
-#include "assertions.h"
 #include "openclwrapper.h"
-#include "vimbaloader.h"
 
 #include "ui_aboutdialog.h"
 
+#ifdef SKINCAM_ENABLE_VIMBA
+#include "assertions.h"
+#include "vimbaloader.h"
+
 #include <VimbaCPP/Include/VimbaCPP.h>
+#endif
 
 // ---------------------------------------------------------------------------------------------- //
 
@@ -119,6 +122,7 @@ void AboutDialog::setupOpenCLInfo()
 
 void AboutDialog::setupVimbaInfo()
 {
+#ifdef SKINCAM_ENABLE_VIMBA
     ASSERT(VimbaLoader::isInitialized());
 
     QFont font = m_ui->vimbaTitle->font();
@@ -135,6 +139,10 @@ void AboutDialog::setupVimbaInfo()
     auto patch = static_cast<int>(info.patch);
 
     m_ui->vimbaVersion->setText(QString("%1.%2.%3").arg(major).arg(minor).arg(patch));
+#else
+    m_ui->vimbaTitle->setVisible(false);
+    m_ui->vimbaWidget->setVisible(false);
+#endif
 }
 
 // ---------------------------------------------------------------------------------------------- //
@@ -200,7 +208,7 @@ void AboutDialog::setupLicenseText()
 
     m_ui->licensesText->append("");
 
-    // Vimba
+#ifdef SKINCAM_ENABLE_VIMBA
     m_ui->licensesText->setFontWeight(QFont::Bold);
     m_ui->licensesText->append("Vimba");
 
@@ -208,6 +216,7 @@ void AboutDialog::setupLicenseText()
     m_ui->licensesText->append("This software uses the Vimba SDK for machine vision cameras.\n"
                                "See https://www.alliedvision.com/en/products/vimba-sdk for "
                                "details.");
+#endif
 
     m_ui->licensesText->moveCursor(QTextCursor::Start);
 }

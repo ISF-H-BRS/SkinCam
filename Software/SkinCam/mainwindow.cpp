@@ -68,6 +68,15 @@ MainWindow::MainWindow(SkinCamSystem* skinCam, bool testMode)
 {
     m_ui->setupUi(this);
 
+#ifndef SKINCAM_ENABLE_VIMBA
+    m_ui->actionOpenCamera->setVisible(false);
+    m_ui->actionSaveImage->setVisible(false);
+    m_ui->actionPause->setVisible(false);
+
+    const int controlIndex = m_ui->controlTabWidget->indexOf(m_ui->cameraTab);
+    m_ui->controlTabWidget->setTabVisible(controlIndex, false);
+#endif
+
 #ifdef SKINCAM_BUILD_LEGACY
     m_ui->ledPowerGroup->hide();
 #endif

@@ -22,7 +22,10 @@
 // ============================================================================================== //
 
 #include "camerasystem.h"
+
+#ifdef SKINCAM_ENABLE_VIMBA
 #include "vimbaloader.h"
+#endif
 
 // ---------------------------------------------------------------------------------------------- //
 
@@ -31,9 +34,13 @@ using namespace SkinCam;
 // ---------------------------------------------------------------------------------------------- //
 
 CameraSystem::CameraSystem(const Setup& setup)
+#ifdef SKINCAM_ENABLE_VIMBA
     : m_system(&AVT::VmbAPI::VimbaSystem::GetInstance())
+#endif
 {
+#ifdef SKINCAM_ENABLE_VIMBA
     ASSERT(VimbaLoader::isInitialized());
+#endif
 
     const Camera::Setup& cameraSetup = setup.cameraSetup;
 
@@ -49,7 +56,7 @@ CameraSystem::CameraSystem(const Setup& setup)
 
     setSequenceConfiguration(setup.refreshRate, setup.illuminationTime);
 
-#ifdef SKINCAM_USE_DUMMY_CAMERA
+#if !defined(SKINCAM_ENABLE_VIMBA) || defined(SKINCAM_USE_DUMMY_CAMERA)
     m_camera = std::make_unique<DummyCamera>();
 #else
     m_camera = std::make_unique<Camera>(cameraSetup, m_system);
@@ -236,6 +243,7 @@ auto CameraSystem::getCameraStatus() const -> Camera::Status
 
 auto CameraSystem::getAvailableCameras() -> std::vector<std::string>
 {
+#ifdef SKINCAM_ENABLE_VIMBA
     ASSERT(VimbaLoader::isInitialized());
 
     AVT::VmbAPI::VimbaSystem& system = AVT::VmbAPI::VimbaSystem::GetInstance();
@@ -275,6 +283,9 @@ auto CameraSystem::getAvailableCameras() -> std::vector<std::string>
     }
 
     return serials;
+#else
+    return {};
+#endif
 }
 
 // ---------------------------------------------------------------------------------------------- //

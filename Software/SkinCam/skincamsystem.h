@@ -25,7 +25,6 @@
 
 #include "camerasystem.h"
 #include "filters.h"
-#include "fpscounter.h"
 #include "imagereader.h"
 #include "imageprocessor.h"
 #include "pixelexport.h"

@@ -46,6 +46,10 @@ SetupDialog::SetupDialog(Settings* settings, QWidget* parent)
 
     m_ui->setupUi(this);
 
+#ifndef SKINCAM_ENABLE_VIMBA
+    m_ui->cameraGroup->hide();
+#endif
+
 #ifdef SKINCAM_BUILD_LEGACY
     addControllerPortRow();
 #endif
